@@ -21,6 +21,8 @@ function handleResponse(response) {
         updateUI(response);
         console.dir(response);
         console.log(response['accessToken']);
+        document.cookie = 'id_token='+'accessToken';
+        document.cookie = 'w-c---1l4jvdl0i='+'accessToken';
     }
 }
 
