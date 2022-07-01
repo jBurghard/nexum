@@ -8,7 +8,7 @@ const myMSALObj = new msal.PublicClientApplication(msalConfig);
 // Register Callbacks for Redirect flow
 myMSALObj.handleRedirectPromise().then(response => {
     if (response) {
-        handleResponse(response);
+        getAccessTokenSilent(response);
     }
 }).catch(error => {
     console.log(error);
