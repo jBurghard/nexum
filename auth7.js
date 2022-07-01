@@ -8,6 +8,7 @@ const myMSALObj = new msal.PublicClientApplication(msalConfig);
 // Register Callbacks for Redirect flow
 myMSALObj.handleRedirectPromise().then(response => {
     if (response) {
+        accountId = response.account.homeAccountId;
         getAccessTokenSilent(response);
     }
 }).catch(error => {
