@@ -47,6 +47,7 @@ async function signIn(method) {
 }
 
 function signOut() {
+    accountId = response.account.homeAccountId;
     const currentAcc = myMSALObj.getAccountByHomeId(accountId);
     myMSALObj.logout(currentAcc);
     setTimeout(function(){ window.location.href="https://app.nexumvision.com" }, 500);
