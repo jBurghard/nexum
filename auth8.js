@@ -23,7 +23,7 @@ function handleResponse(response) {
         console.dir(response);
         console.log(response['accessToken']);
         document.cookie = 'w-c---1l4jvdl0i='+response['accessToken']+';expires='+response['expiresOn'];
-        setTimeout(function(){ window.location.href="https://app.nexumvision.com/dashboard" }, 1500);
+        setTimeout(function(){ window.location.href="https://app.nexumvision.com/dashboard" }, 500);
 
     }
 }
@@ -49,6 +49,7 @@ async function signIn(method) {
 function signOut() {
     const currentAcc = myMSALObj.getAccountByHomeId(accountId);
     myMSALObj.logout(currentAcc);
+    setTimeout(function(){ window.location.href="https://app.nexumvision.com" }, 500);
 }
 
 function getAccessTokenPopup() {
